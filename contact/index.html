@@ -3,8 +3,25 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', GA_MEASUREMENT_ID);
-    })();</script><!-- Microsoft Clarity --><link rel="stylesheet" href="/_astro/contact.DEj_1I4h.css"></head> <body> <header class="border-b border-gray-200"> <div class="container flex items-center justify-between py-4"> <a href="/" class="flex items-center gap-2"> <img src="/favicon.svg" alt="Logo" class="w-8 h-8"> <span class="font-heading text-lg font-semibold tracking-tight">Thrive with Alina</span> </a> <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600"> <a href="/#services" class="hover:text-gray-900">Services</a> <a href="/#about" class="hover:text-gray-900">About</a> <!--<a href="/blog" class="hover:text-gray-900">Blog</a>--> <a href="/contact" class="hover:text-gray-900">Contact</a> <a href="/#schedule" class="hover:text-gray-900">Schedule</a> </nav> <a href="https://calendly.com/thrivewithalina" class="inline-flex items-center rounded-2xl px-4 py-2 bg-indigo-600 text-white text-sm font-medium shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+      
+      // Check consent - only disable if explicitly declined
+      const consent = localStorage.getItem('cookie-consent');
+      if (consent === 'declined') {
+        gtag('consent', 'default', {
+          'analytics_storage': 'denied'
+        });
+        gtag('config', GA_MEASUREMENT_ID, {
+          'anonymize_ip': true,
+          'storage': 'none'
+        });
+      } else {
+        // Accepted or no choice yet - enable tracking
+        gtag('consent', 'default', {
+          'analytics_storage': 'granted'
+        });
+        gtag('config', GA_MEASUREMENT_ID);
+      }
+    })();</script><!-- Microsoft Clarity --><!-- Microsoft Clarity --><link rel="stylesheet" href="/_astro/contact.CU_lKyVo.css"></head> <body> <header class="border-b border-gray-200"> <div class="container flex items-center justify-between py-4"> <a href="/" class="flex items-center gap-2"> <img src="/favicon.svg" alt="Logo" class="w-8 h-8"> <span class="font-heading text-lg font-semibold tracking-tight">Thrive with Alina</span> </a> <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600"> <a href="/#services" class="hover:text-gray-900">Services</a> <a href="/#about" class="hover:text-gray-900">About</a> <!--<a href="/blog" class="hover:text-gray-900">Blog</a>--> <a href="/contact" class="hover:text-gray-900">Contact</a> <a href="/#schedule" class="hover:text-gray-900">Schedule</a> </nav> <a href="https://calendly.com/thrivewithalina" class="inline-flex items-center rounded-2xl px-4 py-2 bg-indigo-600 text-white text-sm font-medium shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
 Schedule now
 </a> </div> </header> <main>  <section id="contact" class="py-20"> <div class="container"> <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Contact</p> <h2 class="text-3xl md:text-4xl font-heading font-bold tracking-tight mb-4">Get in Touch</h2> <p class="text-gray-600 max-w-3xl">Have questions about coaching? Want to learn more? Send me a message and I&#39;ll get back to you soon.</p> <div class="mt-10">  <div class="max-w-2xl mx-auto"> <form action="https://formspree.io/f/xvgveeqv" method="POST" class="space-y-6"> <!-- Name --> <div> <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
 Name *
@@ -24,4 +41,10 @@ Your information is private and will never be shared.
 Schedule Free Session
 </a> <a href="mailto:alina@thrivewithalina.org" class="inline-flex items-center justify-center gap-2 text-indigo-600 hover:text-indigo-700 font-medium"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path> </svg>
 Email directly
-</a> </div> </div> </div>  </div> </div> </section>  </main> <footer class="border-t border-gray-200 mt-16"> <div class="container py-8 text-sm text-gray-600 flex flex-col md:flex-row items-center justify-between gap-4"> <p>© 2025 Dr. Alina Kirshon-Goldman, DMA, CPC. All rights reserved.</p> <div class="flex items-center gap-6"> <a href="#about" class="hover:text-gray-900">About</a> <a href="#services" class="hover:text-gray-900">Services</a> <a href="https://calendly.com/thrivewithalina" class="hover:text-gray-900">Schedule</a> </div> </div> </footer> </body></html>
+</a> </div> </div> </div>  </div> </div> </section>  </main> <footer class="border-t border-gray-200 mt-16"> <div class="container py-8 text-sm text-gray-600 flex flex-col md:flex-row items-center justify-between gap-4"> <p>© 2025 Dr. Alina Kirshon-Goldman, DMA, CPC. All rights reserved.</p> <div class="flex items-center gap-6"> <a href="#about" class="hover:text-gray-900">About</a> <a href="#services" class="hover:text-gray-900">Services</a> <a href="https://calendly.com/thrivewithalina" class="hover:text-gray-900">Schedule</a> </div> </div> </footer> <div id="cookie-consent" class="cookie-consent hidden" data-astro-cid-garwan2p> <div class="cookie-consent-content" data-astro-cid-garwan2p> <p class="cookie-consent-text" data-astro-cid-garwan2p>
+We use cookies and analytics tools to improve your experience and understand how you use our website.
+<a href="/privacy" class="cookie-consent-link" data-astro-cid-garwan2p>Learn more</a> </p> <div class="cookie-consent-buttons" data-astro-cid-garwan2p> <button id="cookie-accept" class="cookie-btn cookie-accept" data-astro-cid-garwan2p>
+Accept
+</button> <button id="cookie-decline" class="cookie-btn cookie-decline" data-astro-cid-garwan2p>
+Decline
+</button> </div> </div> </div>  <script type="module">function l(){return localStorage.getItem("cookie-consent")}function a(e){localStorage.setItem("cookie-consent",e)}const r=l();if(!r){const e=document.getElementById("cookie-consent");e&&e.classList.remove("hidden")}document.getElementById("cookie-accept")?.addEventListener("click",()=>{a("accepted"),document.getElementById("cookie-consent")?.classList.add("hidden"),typeof gtag<"u"&&gtag("consent","update",{analytics_storage:"granted"});const e=document.querySelector("script[data-clarity]")?.getAttribute("data-clarity");e&&typeof clarity>"u"&&(function(t,i,n,d,s,o,c){t[n]=t[n]||function(){(t[n].q=t[n].q||[]).push(arguments)},o=i.createElement(d),o.async=1,o.src="https://www.clarity.ms/tag/"+s,c=i.getElementsByTagName(d)[0],c.parentNode.insertBefore(o,c)})(window,document,"clarity","script",e),window.location.reload()});document.getElementById("cookie-decline")?.addEventListener("click",()=>{a("declined"),document.getElementById("cookie-consent")?.classList.add("hidden"),typeof gtag<"u"&&gtag("consent","update",{analytics_storage:"denied"}),typeof clarity<"u"&&clarity("stop"),window.location.reload()});</script> </body></html>
